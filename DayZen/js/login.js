@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Verify credentials
-            if (!storedPass || (enteredEmail === storedEmail && enteredPassword === storedPass) || (enteredEmail && enteredPassword.length >= 4)) {
+            if (storedEmail && storedPass && enteredEmail === storedEmail && enteredPassword === storedPass) {
                 localStorage.setItem("isLoggedIn", "true");
                 if (!storedEmail) {
                     localStorage.setItem("registeredEmail", enteredEmail);
